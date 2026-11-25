@@ -1,6 +1,6 @@
 # Shira
 
-**A voice-driven AI assistant that listens, reasons, speaks, and interacts with your PC.**
+**A voice-driven AI agent that listens, reasons, speaks, and interacts with your PC.**
 
 Shira combines local speech recognition, a llama.cpp-compatible LLM server, streaming text-to-speech, short-term conversation memory, and desktop tools in a Python desktop application.
 
@@ -151,7 +151,7 @@ The LLM servers are expected to expose an OpenAI-compatible chat-completions end
 
 ### 5. Optional: configure OpenRGB
 
-Install [OpenRGB](https://openrgb.org/) and start its SDK server to enable the RGB tools. Without it, RGB operations may report an error; the other assistant features can still be used.
+Install [OpenRGB](https://openrgb.org/) and start its SDK server to enable the RGB tools. Without it, RGB operations may report an error; the other agent features can still be used.
 
 ### 6. Launch Shira
 
@@ -168,7 +168,7 @@ Shira reads its settings from environment variables. Defaults are defined in `co
 | Variable | Default | Description |
 | --- | --- | --- |
 | `SHIRA_USER_NAME` | `User` | Name used in prompts and tool descriptions |
-| `SHIRA_ASSISTANT_NAME` | `Shira` | Assistant name used in prompts |
+| `SHIRA_ASSISTANT_NAME` | `Shira` | Agent name used in prompts |
 | `SHIRA_ASR_DEVICE` | `cpu` | ASR device: `cpu` or `cuda` |
 | `SHIRA_ASR_THREADS` | `min(8, CPU cores)` | Number of CPU threads used by ASR |
 | `SHIRA_LLM_URL` | `http://127.0.0.1:8080/v1/chat/completions` | Main LLM endpoint |
