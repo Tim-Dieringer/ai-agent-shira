@@ -48,14 +48,25 @@ Shira combines local speech recognition, a llama.cpp-compatible LLM server, stre
 
 ## Architecture
 
-Shira runs its main stages in separate processes and passes messages between them using multiprocessing queues.
+Shira runs its main stages in separate processes and passes messages between them using multiprocessing queues. Each process sends updates to the GUI independently.
 
-```text
- microphone ──► ASR ──► LLM ──► TTS ──► speakers
-                 │       │
-                 │       ├──► tools (time, system resources, RGB, screenshots)
-                 │       └──► short-term memory (summarizer endpoint)
-                 └────────────► GUI (transcript, status, conversation, stats)
+```mermaid
+flowchart LR
+    MIC([Microphone]) --> ASR[ASR]
+    ASR --> LLM[LLM]
+    LLM --> TTS[TTS]
+    TTS --> SPK([Speakers])
+
+    LLM --> TOOLS[Tools<br/>Time, system resources,<br/>RGB, screenshots]
+    LLM --> MEM[Short-term Memory<br/>Summarizer endpoint]
+
+    ASR -.-> GUI
+    LLM -.-> GUI
+    TTS -.-> GUI
+
+    GUI[GUI<br/>Transcript, status,<br/>conversation, statistics]
+
+    style GUI fill:#2563eb,color:#fff,stroke:#1d4ed8
 ```
 
 ### Project layout
