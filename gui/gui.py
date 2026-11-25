@@ -124,7 +124,7 @@ class MainWindow(QMainWindow):
         layout_main.addWidget(root_tts, stretch=1)
 
 
-    
+
     def _make_status_bar(self):
         bar = QFrame()
         bar.setObjectName("llmStatusBar")

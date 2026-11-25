@@ -19,6 +19,33 @@ Shira combines local speech recognition, a llama.cpp-compatible LLM server, stre
 - **Desktop tools:** retrieves the current time and system resource usage, reads/sets RGB lighting through OpenRGB, and captures monitor screenshots for vision-capable models.
 - **Desktop GUI:** PySide6 interface with conversation display, live transcript, microphone level, and latency/token statistics.
 
+## Technology Stack
+
+| Area | Technologies |
+|---|---|
+| Language | Python 3.10+ |
+| Desktop GUI | PySide6 |
+| Speech Recognition | NVIDIA NeMo, Parakeet TDT |
+| Voice Activity Detection | Silero VAD |
+| Language Models | llama.cpp-compatible inference servers |
+| Speech Synthesis | Breeze TTS |
+| Hardware Integration | OpenRGB, PyTorch |
+| Concurrency | Python multiprocessing, inter-process queues |
+| Testing | pytest |
+| Code Quality | Ruff |
+| CI/CD | GitHub Actions |
+| Version Control | Git, GitHub |
+
+## Engineering Highlights
+
+- Designed and implemented a modular multi-process AI application in Python.
+- Integrated independent speech recognition, LLM inference, and text-to-speech services.
+- Implemented streamed LLM responses and structured tool calling.
+- Developed a context-management system using LLM-based conversation summarization.
+- Integrated AI capabilities with desktop operations and hardware monitoring.
+- Built a PySide6 graphical interface with live application status and performance metrics.
+- Established automated testing and cross-platform CI using pytest, Ruff, and GitHub Actions.
+
 ## Architecture
 
 Shira runs its main stages in separate processes and passes messages between them using multiprocessing queues.
