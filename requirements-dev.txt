@@ -1,0 +1,10 @@
+# Everything needed to run the tests and the linter.
+# The tests do not need torch, NeMo, PySide6, a GPU or any audio hardware:
+# mss is replaced by a stand-in in tests/conftest.py and NVML is faked in the tests.
+pytest>=8.0
+ruff>=0.6
+
+# Lightweight runtime dependencies imported by the tested modules
+requests>=2.31
+psutil>=5.9
+Pillow>=10.0

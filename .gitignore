@@ -1,0 +1,48 @@
+# runtime data
+memory/*
+!memory/.gitkeep
+!memory/screenshots/
+memory/screenshots/*
+!memory/screenshots/.gitkeep
+
+# local config
+.env
+.env.*
+config.local.*
+
+# python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# virtual environments
+venv/
+.venv/
+env/
+
+# models
+*.gguf
+*.safetensors
+*.ckpt
+*.pt
+*.pth
+*.onnx
+*.nemo
+*.bin
+
+# saved voices
+voices/
+
+# misc
+*.log
+*.tmp
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
